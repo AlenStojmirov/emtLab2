@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/bootstrap.min.css">
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="/assets/vendor/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <title>Online Shop</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <ul class="list-group" th:each="product : ${productList}">
+            <li class="list-group-item list-group-item-default">
+                <a th:href="${'products/product/'+product.id}" th:text="${product.id + product.name}"></a>
+            </li>
+        </ul>
+    </div>
+</main>
+
+</body>
+</html>
