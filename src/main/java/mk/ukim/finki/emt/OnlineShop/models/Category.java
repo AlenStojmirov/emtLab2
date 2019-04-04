@@ -4,6 +4,11 @@ public class Category {
     private Long id;
     private String cname;
 
+    @Override
+    public String toString() {
+        return cname;
+    }
+
     public Category(Long id, String cname) {
         this.id = id;
         this.cname = cname;

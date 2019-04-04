@@ -1,22 +1,31 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/vendor/bootstrap/bootstrap.min.css">
-    <script src="/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-    <script src="/assets/vendor/popper.min.js"></script>
-    <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <title>Online Shop</title>
 </head>
 <body>
 <main>
     <div class="container">
-        <div th:text="${product.id}"></div>
-        <div th:text="${product.name}"></div>
-        <div th:text="${product.opis}"></div>
-        <div>
-            <img th:src="@{${product.slika}}"/>
+        <div class="row">
+            <img style="margin-top: 2em;width: 30em;height: 30em" class="responsive mx-auto d-block"  th:src="@{${product.slika}}"/>
+        </div>
+        <div class="row; text-center">
+            <h3 th:text="'Product ID : ' + ${product.id}"></h3>
+        </div>
+        <div class="row; text-center">
+            <h3 th:text="'Name : ' + ${product.name}"></h3>
+        </div>
+        <div class="row; text-center">
+            <h3 th:text="'Description : ' + ${product.opis}"></h3>
+        </div>
+        <div class="row; text-center">
+            <h3 th:text="'Category : ' + ${product.category}"></h3>
+        </div>
+        <div class="row; text-center">
+            <h3 th:text="'Manufacturer : ' + ${product.manufacturer}"></h3>
         </div>
     </div>
 </main>

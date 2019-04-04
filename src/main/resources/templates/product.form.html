@@ -2,28 +2,25 @@
 <head>
     <title>Devices Shop</title>
     <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="/assets/vendor/bootstrap/bootstrap.min.css">
-    <script src="/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-    <script src="/assets/vendor/popper.min.js"></script>
-    <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
 <main>
     <div class="container">
-        <form class="form" method="post" action="/products/add">
+        <form style="margin-top: 2em" class="form" method="post" action="/products/add">
             <div class="form-group">
                 <label for="productName">Name</label>
                 <input id="productName" type="productName" class="form-control" th:field="*{product.name}" name="name" placeholder="Enter name" required>
             </div>
             <div class="form-group">
-            <label for="productOpis">Opis</label>
-            <input id="productOpis" class="form-control" type="productOpis" th:field="*{product.opis}" name="opis" placeholder="Enter opis" required>
+            <label for="productOpis">Description</label>
+            <input id="productOpis" class="form-control" type="productOpis" th:field="*{product.opis}" name="opis" placeholder="Enter Description" required>
             </div>
 
             <div class="form-group">
-                <label for="productSlika">Link od slika</label>
-                <input id="productSlika" class="form-control" type="productSlika" th:field="*{product.slika}" name="slika" placeholder="Staj slika" required>
+                <label for="productSlika">Link from image</label>
+                <input id="productSlika" class="form-control" type="productSlika" th:field="*{product.slika}" name="slika" placeholder="Link from image" required>
             </div>
             <div class="form-group">
                 <label for="manufacturer">Manufacturer:</label>
@@ -35,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                <label for="category">Manufacturer:</label>
+                <label for="category">Category:</label>
                 <select id="category" class="form-control" th:field="*{product.category.id}" required>
                     <option th:each="m : ${categories}" th:value="${m.id}" th:text="${m.cname}">
 

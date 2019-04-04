@@ -4,6 +4,11 @@ public class Manufacturer {
     private Long id;
     private String mname;
 
+    @Override
+    public String toString() {
+        return mname;
+    }
+
     public Manufacturer() {
     }
 
