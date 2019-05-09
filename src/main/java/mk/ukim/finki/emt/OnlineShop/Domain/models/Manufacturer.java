@@ -1,6 +1,11 @@
-package mk.ukim.finki.emt.OnlineShop.models;
+package mk.ukim.finki.emt.OnlineShop.Domain.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Manufacturer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String mname;
 

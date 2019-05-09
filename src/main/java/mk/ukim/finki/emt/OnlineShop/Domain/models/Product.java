@@ -1,13 +1,34 @@
-package mk.ukim.finki.emt.OnlineShop.models;
+package mk.ukim.finki.emt.OnlineShop.Domain.models;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String opis;
     private String slika;
+    private Double cena;
+
+    @ManyToOne
     private Category category;
+    @ManyToOne
     private Manufacturer manufacturer;
+
+    @ManyToMany
+    private List<Accessory> accessories;
+
+    public List<Accessory> getAccessories() {
+        return accessories;
+    }
+
+    public void setAccessories(List<Accessory> accessories) {
+        this.accessories = accessories;
+    }
 
     public Long getId() {
         return id;
@@ -55,5 +76,13 @@ public class Product {
 
     public void setManufacturer(Manufacturer manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public Double getCena() {
+        return cena;
+    }
+
+    public void setCena(Double cena) {
+        this.cena = cena;
     }
 }
